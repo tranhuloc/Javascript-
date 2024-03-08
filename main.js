@@ -1,6 +1,30 @@
+/*
+Giới thiệu một số hàm built-in
+    1. Alert
+    2. Console
+    3. Confirm
+    4. Prompt
+    5. Set timeout
+    6. Set interval
+*/
 
-var fullName = 'Tran Huu Loc';
-var age = 22;
+// Console
+//var fullName = "Tran Huu Loc";
 
-alert(fullName);
-alert(age);
+//console.log(fullName);
+
+// Confirm
+//confirm("Xac nhan ban du tuoi!");
+
+// Prompt
+//prompt("Xac nhan ban du tuoi!");
+
+// setTimeout
+// setTimeout(function() {
+//     alert('Thong bao')
+// }, 1000)
+
+// setInterval
+setInterval(function() {
+    console.log('Day la log' + Math.random())
+}, 1000)
