@@ -1,18 +1,16 @@
 /*
-Toán tử số học
-+       --> Cộng
--       --> Trừ
-*       --> Nhân 
-**      --> Lũy thừa
-/       --> Chia
-%       --> Chia lấy dư  
-++      --> Tăng 1 giá trị số
---      --> Giảm 1 giá trị số
+Toán tử ++ --
+Prefix & Postfix
 */      
 
-var a = 1;
+var a = 6;
+ 
+var output = a++;
 
-a--;
-a--;
+//Việc 1: `a copy`, `a copy` = 6
+//Việc 2: +1 cho a, a = a + 1 => a = 7
+//Việc 3: trả về `a copy`
+console.log('output: ', output); //output = 6
 
-console.log(a);
+
+console.log('a: ', a); //a = 7
