@@ -1,30 +1,31 @@
 /*
-Giới thiệu một số hàm built-in
-    1. Alert
-    2. Console
-    3. Confirm
-    4. Prompt
-    5. Set timeout
-    6. Set interval
+Giới thiệu về toán tử trong JS
+1. Toán tử số học - Arithmetic
+2. Toán tử gán - Assignment
+3. Toán tử so sánh - Comparison
+4. Toán tử logic - Logical
 */
 
-// Console
-//var fullName = "Tran Huu Loc";
+//1. Toán tử số học - Arithmetic
+var a = 1 + 2;
+console.log(a);
 
-//console.log(fullName);
+//2. Toán tử gán - Assignment => =
+var fullName = "Tran Huu Loc";
+console.log(fullName);
 
-// Confirm
-//confirm("Xac nhan ban du tuoi!");
+//3. Toán tử so sánh - Comparison => (>, <, >=, <=, ==)
+var a = 1;
+var b = 2;
 
-// Prompt
-//prompt("Xac nhan ban du tuoi!");
+if (a == b) {
+    alert("Dung");
+}
 
-// setTimeout
-// setTimeout(function() {
-//     alert('Thong bao')
-// }, 1000)
+//4. Toán tử logic - Logical
+var a = 1;
+var b = 2;
 
-// setInterval
-setInterval(function() {
-    console.log('Day la log' + Math.random())
-}, 1000)
+if (a > 0 && b > 0) {
+    alert('a & b lon hon 0')
+}
