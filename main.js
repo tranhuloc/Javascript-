@@ -1,14 +1,10 @@
 /*
-Toán tử chuỗi - String operator
+Boolean
 */
 
-// var firstName = 'Loc';
-// var lastName = 'Tran';
+var a = 1;
+var b = 2;
 
-// console.log(firstName + ' ' + lastName);
+var isSuccess = a < b;
 
-var name = "Loc";
-
-name += " Tran";
-
-console.log(name);
+console.log(isSuccess);
