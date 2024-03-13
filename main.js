@@ -1,21 +1,31 @@
 /*
-If - else
+Toán tử logic
+1. && - And
+2. || - Or
+3. ! - Not
 */
 
-/*
-0
-false
-'' - ""
-undefined
-NaN
-null
-6 giá trị này convert sang boolean sẽ là false
-*/
+var a = 1;
+var b = 2;
+var c = 3;
 
-var fullName = 'Loc Tran';
+// &&
+// if (a > 0 && b > 0 && c > 0) {
+//     console.log("DIEU KIEN DUNG!");
+// } else {
+//     console.log("DIEU KIEN SAI!");
+// }
 
-if (fullName) {
-    console.log("DIEU KIEN DUNG");
+// ||
+// if (a > 0 || b == 0 || c == 0) {
+//     console.log("DIEU KIEN DUNG!");
+// } else {
+//     console.log("DIEU KIEN SAI!");
+// }
+
+// !
+if (!(a < 0)) {
+    console.log("DIEU KIEN DUNG!");
 } else {
-    console.log("DIEU KIEN SAI");
+    console.log("DIEU KIEN SAI!");
 }
