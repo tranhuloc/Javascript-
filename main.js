@@ -1,10 +1,21 @@
 /*
-Boolean
+If - else
 */
 
-var a = 1;
-var b = 2;
+/*
+0
+false
+'' - ""
+undefined
+NaN
+null
+6 giá trị này convert sang boolean sẽ là false
+*/
 
-var isSuccess = a < b;
+var fullName = 'Loc Tran';
 
-console.log(isSuccess);
+if (fullName) {
+    console.log("DIEU KIEN DUNG");
+} else {
+    console.log("DIEU KIEN SAI");
+}
