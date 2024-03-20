@@ -1,50 +1,60 @@
 /*
-    Chuỗi trong JS
+    LÀM VIỆC VỚI CHUỖI
 
-    1. Tạo chuỗi
-        - Các cách tạo chuỗi
-        - Nên dùng cách nào? Lý do?
-        - Kiểm tra data type
-    2. Một số case sử dụng backslash (\)
-    3. Xem độ dài chuỗi
-    4. Chú ý độ dài khi viết code 
-    5. Template string ES6
+    Keyword: Javascript string methods
+
+    1. Length
+    2. Find index
+    3. Cut string
+    4. Replace
+    5. Convert to upper case
+    6. Convert to lower case
+    7. Trim
+    8. Split
+    9. Get a character by index
+   
 */
 
-// Các cách tạo chuỗi
-// Cách 1 -> Nên dùng cách 1, ngắn gọn, nhanh, 
-var fullName = "Loc Tran";
+var myString = "Hoc JS co ban va JS nang cao  ";
+// 1. Length -> Đo độ dài chuỗi
+console.log(myString.length);
 
-// Cách 2 -> Tạo ra kiểu dữ liệu không như mong muốn
-var fullName2 = new String("Loc Tran"); 
+// 2. Find index -> Tìm vị trí của 1 ký tự trong 1 chuỗi
+console.log(myString.indexOf('JS'));
+console.log(myString.indexOf('nang cao', 6)); // -> Tìm kiếm bắt đầu từ vị trí 6
+console.log(myString.indexOf('ABC')); // -> không tìm thấy return -1
+console.log(myString.lastIndexOf('JS')); // -> Tìm ký tự ở vị trí cuối cùng
 
-console.log(typeof fullName2); // -> object != string
+// 3. Cut string -> Cắt chuỗi
+console.log(myString.slice(4, 6));
+console.log(myString.slice(4));
+console.log(myString.slice(-3, -1)); // -> Cắt từ phải sang trái
 
-// 2. Một số case sử dụng backslash -> backlash in Javascript
-var fullName3 = 'Tran Huu \"Loc\'';
+// 4. Replace -> Ghi đè
+console.log(myString.replace('JS', 'Javascript'));
+console.log(myString.replace(/JS/g, 'Javascript')); // -> Sử dụng biểu thức chính quy để tìm tất cả chuỗi JS
 
-console.log(fullName3);
+// 5. Convert to upper case -> Chuyển đổi tất cả ký tự chuỗi thành chữ hoa
+console.log(myString.toUpperCase());
 
-var fullName4 = "Day la dau \\";
+// 6. Convert to lower case -> Chuyển đổi tất cả ký tự chuỗi thành chữ thường
+console.log(myString.toLowerCase());
 
-console.log(fullName4);
+// 7. Trim -> Loại bỏ ký tự khoảng trắng thừa ở 2 đầu chuỗi
+console.log(myString.trim());
 
-// 3. Xem độ dài chuỗi
-var fullName5 = "Loc Tran";
+// 8. Split -> Tách các phẩn từ chuỗi thành array dừa vào điểm chung
+var laguages = 'Javascript, PHP, C++';
+var laguages2 = 'Javascript';
 
-console.log(fullName5.length);
+console.log(laguages.split(', '));
+console.log(laguages2.split(''));
 
-// 4. Chú ý độ dài khi viết code -> tối đa 80 ký tự trên 1 dòng
-var fullName6 = "Một số case sử dụng backslash"
-+ " 1. Một số case sử dụng backslash"
-+ " 2. Một số case sử dụng backslash"
-+ " 3. Một số case sử dụng backslash"
-;
+// 9. Get a character by index -> Từ vị trí index lấy ra ký tự
+const myString2 = 'Loc Tran';
 
-console.log(fullName6);
-
-// 5. Template string ES6
-var firstName = 'Loc';
-var lastName = 'Tran';
-
-console.log(`Toi la: ${firstName} ${lastName}`);
+console.log(myString2.charAt(0));
+console.log(myString2.charAt(5));
+console.log(myString2.charAt(15));
+console.log(myString2[2]);
+console.log(myString2[10]);
