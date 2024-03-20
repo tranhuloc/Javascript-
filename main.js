@@ -1,35 +1,57 @@
 /*
-    Kiểu số (Number) trong Javascript
+    Mảng trong Javascript - Array
 
-    1. Tạo giá trị Number
-        - Các cách tạo
-        - Dùng cách nào? Tại sao?
+    1. Tạo mảng
+        - Cách tạo
+        - Sử dụng cách nào? Tại sao?
         - Kiểm tra data type
-
-    2. Làm việc với Number
-        - To string
-        - To Fixed
+    2. Truy xuất mảng
+        - Độ dài mảng
+        - Lấy phần tử theo index
 */
 
-// Các cách tạo -> 2 cách tạo
-// Cách 1 -> Nên dùng vì ngắn gọn, nhanh
-var age = 18;
-var PI = 3.14;
+// Cách tạo
+// Cách 1 -> nên dùng
+var languages = [
+    "Javascript",
+    "C++",
+    "PHP",
+    "Python",
+    null,
+    undefined,
+    function () {},
+    {},
+    123,
+];
 
-// Cách 2 -> Không nên vì rườm rà, tạo một đối tượng, kiểu dữ liệu không mong muốn
-var otherNumber = new Number(9);
+// console.log(languages);
 
-console.log(typeof age); //number
-console.log(typeof otherNumber); //object
+// Cách 2
+var languages2 = new Array(
+    "Javascript",
+    "C++",
+    "PHP",
+    "Python",
+    null,
+    undefined,
+    function () {},
+    {},
+    123
+);
+
+console.log(languages2);
 
 // Kiểm tra data type
-var result = 20 / "ABC";
+console.log(Array.isArray(languages2));
+console.log(Array.isArray({}));
 
-console.log(isNaN(result));
+// Độ dài mảng
+var languages3 = ["Javascript", "C++", "PHP", "Python"];
 
-// To string
-var myString = age.toString();
-console.log(typeof myString);
+console.log(languages3.length);
 
-// To Fixed
-console.log(PI.toFixed());
+// Lấy phần tử theo index
+var languages4 = ["Javascript", "C++", "PHP", "Python"];
+
+console.log(languages4[0]);
+console.log(languages4[3]);
