@@ -1,39 +1,32 @@
 /*
-    Một số điều cần biết về function
+    Các loại function
 
-    1. Khi function đặt trùng tên? -> Function định nghĩa sau sẽ ghi đè function định nghĩa trước
-    2. Khai báo biến trong hàm? -> Một biến được định nghĩa trong function thì phạm vi sử dụng chỉ nằm trong function đó
-    3. Định nghĩa hàm trong hàm -> Giống như biến, phạm vi sử dụng hàm trong hàm chỉ trong phạm vi hàm được định nghĩa
+    1. Declaration function
+    2. Expression function
+    3. Arrow function
 */
 
-//1. Khi function đặt trùng tên?
-// function showMessage() {
-//     console.log("Message 1");
-// }
+//1. Declaration function -> Có thể được gọi trước khi được định nghĩa
+showMessage();
 
-// function showMessage() {
-//     console.log("Message 2");
-// }
-
-// showMessage(); //-> Message 2
-
-
-//2. Khai báo biến trong hàm?
-// function showMessage() {
-//     var fullName = 'Loc Tran';
-
-//     console.log(fullName);
-// }
-
-// showMessage();
-
-//3. Định nghĩa hàm trong hàm
 function showMessage() {
-    function showMessage2() {
-        console.log('Message 2');
-    }
-
-    showMessage2();
+    console.log('Declaration function');
 }
 
-showMessage();
+
+//2. Expression function -> Không thể gọi trước khi được định nghĩa
+var showMessage2 = function testName() {
+    console.log('Expression function');
+}
+
+showMessage2();
+
+setTimeout(function testName() {
+
+});
+
+var myObject = {
+    myFunction: function testName() {
+
+    }
+}
