@@ -77,3 +77,5 @@ var languages9 = ["Javascript", "PHP", "C++", "Python", "C#"];
 //slice(vị trí bắt đầu cắt, vị trí kết thúc cắt)
 
 console.log(languages9.slice(1, 4)); // (3) ['PHP', 'C++', 'Python']
+console.log(languages9.slice(-1)); // ['C#']
+console.log(languages9.slice(0, 1)); // ['Javascript']
