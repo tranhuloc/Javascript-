@@ -1,55 +1,24 @@
 /*
-    Object trong Javascript
+    Object constructor
 
+    Phải viết hoa chữ cái đầu của tên Object constructor
 */
 
-var sexKey = "sex";
+function User(firstName, lastName, avatar) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.avatar = avatar;
 
-var myInfo = {
-    name: "Loc Tran",
-    age: 18,
-    address: "Can Tho, VN",
-    [sexKey]: "male",
-};
+    this.getName = function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
 
-console.log(myInfo); // {name: 'Loc Tran', age: 18, address: 'Can Tho, VN', sex: 'male'}
+var author = new User('Loc', 'Tran', 'Avatar');
+var user = new User('Tai', 'Nguyen', 'Avatar');
 
-// Thêm key và value mới
-myInfo.email = "locth@gmail.com";
+author.title = 'Chia se dao tai F8';
+user.comment = 'Khoa JS nang cao...'
 
-console.log(myInfo); // {name: 'Loc Tran', age: 18, address: 'Can Tho, VN', sex: 'male', email: 'locth@gmail.com'}
-
-myInfo["my-phone"] = "0123456789";
-
-console.log(myInfo); // {name: 'Loc Tran', age: 18, address: 'Can Tho, VN', sex: 'male', email: 'locth@gmail.com', my-phone: '0123456789'}
-
-// Lấy value ra
-console.log(myInfo.name); // Loc Tran
-
-console.log(myInfo.class); // undefined
-
-console.log(myInfo["email"]); // locth@gmail.com
-
-var myKey = "address";
-
-console.log(myInfo[myKey]); // Can Tho, VN
-
-// Xóa 1 cặp key: value
-delete myInfo.sex;
-
-console.log(myInfo); // {name: 'Loc Tran', age: 18, address: 'Can Tho, VN', email: 'locth@gmail.com', my-phone: '0123456789'}
-
-var myInfo2 = {
-    name: "Loc Tran", // -> Thuộc tính / property
-    age: 18,
-    address: "Can Tho, VN", 
-    [sexKey]: "male",
-    getName: function() {  // -> Phương thức / method
-        return this.name; // myInfor2.name
-    },
-};
-
-// Function -> Phương thức / method
-// Others -> Thuộc tính / property
-
-console.log(myInfo2.getName()); // Loc Tran
+console.log(author.getName());
+console.log(user);
