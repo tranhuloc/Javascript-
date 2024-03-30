@@ -20,3 +20,9 @@ console.log(year); // 2024
 console.log(month); // 3
 console.log(day); // 30
 console.log(`${day}/${month}/${year}`); // 30/3/2024
+
+function getNextYear() {
+    return new Date().getFullYear() + 1;
+}
+
+console.log(getNextYear()); // 2025
