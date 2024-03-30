@@ -1,26 +1,22 @@
 /*
-    Object prototype - Basic
+   Đối tượng Date
 
-    1. Prototype là gì?
-    2. Sử dụng khi nào? 
+   Search -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 */
 
-function User(firstName, lastName, avatar) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.avatar = avatar;
-    this.getName = function () {
-        return `${this.firstName} ${this.lastName}`;
-    };
-}
+var date = Date();
 
-User.prototype.className = 'F8';
-User.prototype.getClassName = function() {
-    return this.className;
-}
+console.log(typeof date); //string
 
-var user = new User('Loc', 'Tran', 'Avatar');
-var user2 = new User('Tai', 'Nguyen', 'Avatar');
+var date = new Date();
 
-console.log(user.getClassName());
-console.log(user2.className);
+console.log(date.getFullYear()); //2024
+
+var year = date.getFullYear();
+var month = date.getMonth() + 1; // 0 - 11 nếu không có +1
+var day = date.getDate();
+
+console.log(year); // 2024
+console.log(month); // 3
+console.log(day); // 30
+console.log(`${day}/${month}/${year}`); // 30/3/2024
