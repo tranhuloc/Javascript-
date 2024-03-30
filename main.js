@@ -1,38 +1,37 @@
 /*
-    Math object
- 
-    - Math.PI
-    - Math.round()
-    - Math.abs()
-    - Math.ceil()
-    - Math.floor()
-    - Math.random()
-    - Math.min()
-    - Math.max()
+    Câu lệnh rẽ nhánh - If else
 */
 
-console.log(Math.PI); // 3.141592653589793
-console.log(Math.round(1.5)); // 2
-console.log(Math.abs(-5.3));
-console.log(Math.ceil(4.00000000001)); // 5 -> LÀm tròn trên
-console.log(Math.floor(5.999999999)); // 5 -> LÀm tròn dưới 
-console.log(Math.random()); // Return 1 số thập phân ngẫu nhiên >1
-console.log(Math.floor(Math.random() * 10)); // Return 1 số ngẫu nhiên 1 - 10
-var random = Math.floor(Math.random() * 5);
+var date = 2;
 
-var bonus = [
-    '10 coin',
-    '20 coin',
-    '30 coin',
-    '40 coin',
-    '50 coin',
-];
+if (date === 2) {
+    console.log('Hom nay la thu 2');
+} else if (date === 3) {
+    console.log('Hom nay la thu 3');
+} else if (date === 4) {
+    console.log('Hom nay la thu 4');
+} else {
+    console.log('Khong phai ngay trong tuan');
+}
 
-console.log(bonus[random]);
 
-console.log(Math.min(-110, 1, 0, 23, 99)); // -110
-console.log(Math.max(-110, 1, 0, 23, 99)); // 99
+/*
+    Khi a chia hết cho 3 thì return về 1
+    Khi a chia hết cho 5 thì return về 2
+    Khi a chia hết cho 15 thì return về 3
+*/
+function run(a) {
+    if (a % 3 == 0 && a % 5 !== 0) {
+        return 1;
+    } else if (a % 5 == 0 && a % 15 !== 0) {
+        return 2;
+    } else if (a % 15 == 0) {
+        return 3;
+    }
+}
 
-function getRandomItem(arr = []) {
-    return Math.random;  // hàm này nhận 1 tham số là mảng và sẽ trả về ngẫu nhiên 1 phần tử của mảng.
-} 
+
+// Kỳ vọng
+console.log(run(3)) // 1
+console.log(run(5)) // 2
+console.log(run(15)) // 3
