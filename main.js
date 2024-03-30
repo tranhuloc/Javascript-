@@ -1,24 +1,26 @@
 /*
-    Object constructor
+    Object prototype - Basic
 
-    Phải viết hoa chữ cái đầu của tên Object constructor
+    1. Prototype là gì?
+    2. Sử dụng khi nào? 
 */
 
 function User(firstName, lastName, avatar) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.avatar = avatar;
-
-    this.getName = function() {
+    this.getName = function () {
         return `${this.firstName} ${this.lastName}`;
-    }
+    };
 }
 
-var author = new User('Loc', 'Tran', 'Avatar');
-var user = new User('Tai', 'Nguyen', 'Avatar');
+User.prototype.className = 'F8';
+User.prototype.getClassName = function() {
+    return this.className;
+}
 
-author.title = 'Chia se dao tai F8';
-user.comment = 'Khoa JS nang cao...'
+var user = new User('Loc', 'Tran', 'Avatar');
+var user2 = new User('Tai', 'Nguyen', 'Avatar');
 
-console.log(author.getName());
-console.log(user);
+console.log(user.getClassName());
+console.log(user2.className);
