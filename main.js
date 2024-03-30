@@ -1,46 +1,29 @@
 /*
-    Câu lệnh rẽ nhánh - Switch
+    Toán tử 3 ngôi - Ternary operator
 */
 
-var date = 7;
+var course = {
+    name: "Javascript",
+    coin: 0,
+};
 
-switch (date) {
-    case 2:
-        console.log("Hom nay la thu 2");
-        break;
-    case 3:
-        console.log("Hom nay la thu 3");
-        break;
-    case 4:
-        console.log("Hom nay la thu 4");
-        break;
-    case 5:
-        console.log("Hom nay la thu 5");
-        break;
-    case 6:
-        console.log("Hom nay la thu 6");
-        break;
-    case 7:
-        console.log("Hom nay la thu 7");
-        break;
-    default:
-        console.log("Khong biet");
+var result = course.coin > 0 ? `${course.coin} Coin` : "Mien phi";
+
+console.log(result);
+
+/*
+    Tạo hàm getCanVoteMessage, hàm này có 1 tham số là age. 
+    Trong trường hợp từ 18 tuổi trở lên 
+    hàm sẽ trả về Bạn có thể bỏ phiếu, 
+    ngược lại hàm trả về Bạn chưa được bỏ phiếu.
+*/
+
+function getCanVoteMessage(age) {
+    return age >= 18 ? 'Bạn có thể bỏ phiếu' : 'Bạn chưa được bỏ phiếu';
 }
 
-// Khi so sánh tính đúng sai sử dụng if - else: > < !==
-// Khi cho trước giá trị và số case >= 3 sử dụng switch - case
 
-function run(fruits) {
-    var result;
 
-    switch (fruits) {
-        case "Banana":
-            result = "This is a Banana";
-            break;
-        case "Apple":
-            result = "This is an Apple";
-            break;
-    }
-
-    return result;
-}
+// Kỳ vọng
+console.log(getCanVoteMessage(18)) // 'Bạn có thể bỏ phiếu'
+console.log(getCanVoteMessage(15)) // 'Bạn chưa được bỏ phiếu'
