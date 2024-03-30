@@ -1,10 +1,7 @@
 /*
-    Vòng lặp - Loop
-
-    1. for - Lặp với điều kiện đúng
-    2. for/in - Lặp qua key của đối tượng
-    3. for/of - Lặp qua value của đối tượng
-    4. while - Lặp khi điều kiện đúng
-    5. do/while - Lặp ít nhất 1 lần, 
-    sau đó lặp khi điều kiện đúng
+    Vòng lặp - For
 */
+
+for (var i = 1; i <= 100; i++) {
+    console.log(i);
+}
