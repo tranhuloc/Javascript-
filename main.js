@@ -1,57 +1,63 @@
 /*
-    For loop - p3
+    For/in loop 
 */
 
-var myArray = [
-    'Javascript',
+var myInfo = {
+    name: 'Loc Tran',
+    age: 18,
+    address: 'Can Tho, VN'
+};
+
+for (var key in myInfo) {
+    console.log(key); // name, age, address
+}
+
+for (var key in myInfo) {
+    console.log(myInfo[key]); // Loc Tran, 18, Can Tho, VN
+}
+
+var languages = [
+    'Javascript', 
     'PHP',
     'C++',
-    'Python',
-    'C#',
-    'Ruby'
+    'Python'
 ];
 
-var arrayLength = myArray.length;
-
-for (var i = 0; i < arrayLength; i++) {
-    console.log(myArray[i]); // Javascript, PHP, C++, Python, C#, Ruby
+for (var key in languages) {
+    console.log(key); // 0 1 2 3
 }
 
+for (var key in languages) {
+    console.log(languages[key]); // Javascript PHP C++ Python
+}
+
+var myString = 'Javascript';
+
+for (var key in myString) {
+    console.log(key); // 0 1 2 3 4 5 6 7 8 9
+}
+
+for (var key in myString) {
+    console.log(myString[key]); // J a v a s c r i p t
+}
 
 /*
-Viết chương trình để tính tổng giá trị của 1 đơn hàng.
+    Bài tập For/in loop 
+*/
 
-Cho trước mảng orders là danh sách chứa các khóa học, 
-các mặt hàng này được thể hiện dưới dạng object 
-và đều có 1 key là price để thể hiện giá trị của mặt hàng đó.
-
-Bạn hãy hoàn thành hàm getTotal 
-để tính được tổng giá trị của đơn hàng.*/
-
-var orders = [
-    {
-        name: 'Khóa học HTML - CSS Pro',
-        price: 3000000
-    },
-    {
-        name: 'Khóa học Javascript Pro',
-        price: 2500000
-    },
-    {
-        name: 'Khóa học React Pro',
-        price: 3200000
+function run(object) {
+    var array = []; 
+    for (var key in object) {
+        array.push('Thuộc tính ' + [key] + ' có giá trị ' + object[key]);
     }
-]
+    return array;
 
-function getTotal(orders) {
-    var sum = 0;
-    for (var i = 0; i < orders.length; i++) {
-        sum = sum + orders[i].price;
-    }
-    return sum;
 }
 
-
-
 // Expected results:
-getTotal(orders) // Output: 8700000
+console.log(run({ name: 'Nguyen Van A', age: 16 }));
+// Output:
+// [
+//     "Thuộc tính name có giá trị Nguyen Van A",
+//     "Thuộc tính age có giá trị 16"
+// ]
