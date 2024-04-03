@@ -1,63 +1,46 @@
 /*
-    For/in loop 
+    For/of loop 
+    Sử dụng để lấy ra từng phần tử của 1 mảng
+    or lấy ra từng chữ cái của 1 chuỗi
+    không thể sử dụng với object - nếu sử dụng cần biến đổi thêm
 */
+
+var languages = ["Javascript", "PHP", "C++"];
+
+for (var value of languages) {
+    console.log(value); // Javascript PHP C++
+}
+
+
+
+var languages1 = "Javascript";
+
+for (var value of languages1) {
+    console.log(value); // J a v a s c r i p t
+}
+
+
 
 var myInfo = {
-    name: 'Loc Tran',
+    name: "Loc Tran",
     age: 18,
-    address: 'Can Tho, VN'
 };
 
-for (var key in myInfo) {
-    console.log(key); // name, age, address
+// Trả lại mảng các key từ object
+console.log(Object.keys(myInfo)); // (2) ['name', 'age']
+
+for (var value of Object.keys(myInfo)) {
+    console.log(value); // name age -> Lấy ra các key từ object
 }
 
-for (var key in myInfo) {
-    console.log(myInfo[key]); // Loc Tran, 18, Can Tho, VN
+// Trả lại mảng các value từ object
+console.log(Object.values(myInfo)); // (2) ['Loc Tran', 18]
+
+// Lấy ra value từ object
+for (var value of Object.keys(myInfo)) {
+    console.log(myInfo[value]); // Loc Tran 18
 }
 
-var languages = [
-    'Javascript', 
-    'PHP',
-    'C++',
-    'Python'
-];
-
-for (var key in languages) {
-    console.log(key); // 0 1 2 3
+for (var value of Object.values(myInfo)) {
+    console.log(value); // Loc Tran 18
 }
-
-for (var key in languages) {
-    console.log(languages[key]); // Javascript PHP C++ Python
-}
-
-var myString = 'Javascript';
-
-for (var key in myString) {
-    console.log(key); // 0 1 2 3 4 5 6 7 8 9
-}
-
-for (var key in myString) {
-    console.log(myString[key]); // J a v a s c r i p t
-}
-
-/*
-    Bài tập For/in loop 
-*/
-
-function run(object) {
-    var array = []; 
-    for (var key in object) {
-        array.push('Thuộc tính ' + [key] + ' có giá trị ' + object[key]);
-    }
-    return array;
-
-}
-
-// Expected results:
-console.log(run({ name: 'Nguyen Van A', age: 16 }));
-// Output:
-// [
-//     "Thuộc tính name có giá trị Nguyen Van A",
-//     "Thuộc tính age có giá trị 16"
-// ]
