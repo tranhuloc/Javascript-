@@ -1,24 +1,19 @@
 /*
-    Break & Continue in loop
+    Vòng lặp lồng nhau - Nested loop
 */
 
-// Break
-for (var i = 0; i < 10; i++) {
-    console.log(i); // 0 -> 5
+var myArray = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+];
 
-    if (i >= 5) {
-        break;
-    }
+for (var i = 0; i < myArray.length; i++) {
+    console.log(myArray[i]); // [1, 2] [3, 4] [5, 6]
 }
 
-
-
-// Continue
-for (var i = 0; i < 10; i++) {
-
-    if (i%2 !== 0) {
-        continue;
+for (var i = 0; i < myArray.length; i++) {
+    for (var j = 0; j < myArray[i].length; j++) { // myArray[i] -> mảng con; myArray[i].length -> các phần tử của mảng con
+        console.log(myArray[i][j]);
     }
-
-    console.log(i); // 0 2 4 6 8
 }
