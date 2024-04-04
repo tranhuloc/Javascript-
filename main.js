@@ -1,19 +1,15 @@
 /*
-    Vòng lặp lồng nhau - Nested loop
+    Ví dụ về vòng lặp
 */
 
-var myArray = [
-    [1, 2],
-    [3, 4],
-    [5, 6]
-];
-
-for (var i = 0; i < myArray.length; i++) {
-    console.log(myArray[i]); // [1, 2] [3, 4] [5, 6]
+for (var i = 50; i > 0; i--) {
+    console.log(i); // 50 -> 1
 }
 
-for (var i = 0; i < myArray.length; i++) {
-    for (var j = 0; j < myArray[i].length; j++) { // myArray[i] -> mảng con; myArray[i].length -> các phần tử của mảng con
-        console.log(myArray[i][j]);
-    }
+for (var j = 0; j <= 50; j += 5) {
+    console.log(j); // 0 5 10 15 ... 50
+}
+
+for (var k = 50; k >= 0; k -= 5) {
+    console.log(k); // 50 45 40 35 ... 0
 }
