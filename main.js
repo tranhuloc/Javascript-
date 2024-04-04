@@ -1,67 +1,88 @@
 /*
-    Đệ quy
+    Array method:
+        forEach()
+        every()
+        some()
+        find()
+        filter()
+        map()
+        reduce()
 */
 
-// Xoá phần tử trùng lặp
- var array = ['a', 'b', 'c', 'a', 'b', 'c'];
-
- // Đặc tính của Set() là các elements or values chỉ tồn tại 1
- console.log(new Set(array)); // Set(3) {'a', 'b', 'c'}
-
- // ... -> toán tử giải
- console.log([...(new Set(array))]); // (3) ['a', 'b', 'c']
-
-
-
-/*
-    1. Xác định điểm dừng
-    2. Logic handle -> Tạo ra điểm dừng
-*/
-
- function countDown(num) {
-    if(num > 0) {
-
-        // Loop
-        console.log(num);
-        return countDown(num - 1);
+var courses = [
+    {
+        id: 1,
+        name: "Javascript",
+        coin: 250,
+    },
+    {
+        id: 2,
+        name: "HTML, CSS",
+        coin: 0,
+    },
+    {
+        id: 3,
+        name: "Ruby",
+        coin: 0,
+    },
+    {
+        id: 4,
+        name: "PHP",
+        coin: 400,
+    },
+    {
+        id: 5,
+        name: "ReactJS",
+        coin: 500,
+    },
+    {
+        id: 6,
+        name: "PHP",
+        coin: 700,
     }
-    return num;
- }
+];
 
- countDown(5);
+// forEach() -> duyệt qua từng phần tử của mảng
+courses.forEach(function(course) {
+    // call back
+    console.log(course); // {id: 1, name: 'Javascript', coin: 250} {id: 2, name: 'HTML, CSS', coin: 0} {id: 3, name: 'Ruby', coin: 0} {id: 4, name: 'PHP', coin: 400} {id: 5, name: 'ReactJS', coin: 500}
+});
 
- function loop(start, end, cb) {
-    if(start <= end) {
-        cb(start);
-        return loop(start + 1, end, cb);
-    }
- }
+courses.forEach(function(index, course) {
+    // call back
+    console.log(course, index);
+});
+
+// every() -> kiểm tra tất cả các phần tử phải thỏa mãn 1 diều kiện nào đó
+var isFree = courses.every(function(course, index) {
+    // kiểm tra tất cả các khóa học có miễn phí hay không
+    return course.coin === 0;
+});
+
+console.log(isFree); // false
 
 
- var array = ['Javascript', 'PHP', 'C++'];
+// some() -> kiểm tra một phần tử phải thỏa mãn 1 diều kiện nào đó
+var isFree = courses.some(function(course, index) {
+    // kiểm tra có khóa học miễn phí hay không
+    return course.coin === 0;
+});
 
- loop(0, array.length - 1, function(index) {
-    //console.log('index: ', index); // index:  0  index:  1  index:  2
-    console.log(array[index]); // Javascript PHP C++
-})
+console.log(isFree); // true
 
-// Tính giai thừa
-// Cách 1
-function giaiThua(number) {
-    var output = 1;
-        for (var i = number; i > 0; i--) {
-            output = output * i;
-        }
-        return output;
-}
 
-//Cách 2
-function giaiThua2(number) {
-    if (number > 0) {
-        return number * giaiThua2(number - 1);
-    }
-    return 1;
-}
+// find() -> return 1 phần tử muốn tìm kiếm
+var course = courses.find(function(course, index) {
+    return course.name === 'PHP';
+});
 
-console.log(giaiThua(6)); //720
-console.log(giaiThua2(5)); //120
+console.log(course); // {id: 4, name: 'PHP', coin: 400}
+
+
+// filter() -> return danh sách các phần tử muốn tìm kiếm
+var listCourse = courses.filter(function(course, index) {
+    return course.name === 'PHP';
+});
+
+console.log(listCourse); // (2) [{…}, {…}]  0: {id: 4, name: 'PHP', coin: 400}  1: {id: 6, name: 'PHP', coin: 700}
+
