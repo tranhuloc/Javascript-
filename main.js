@@ -1,28 +1,24 @@
 /*
-    Do...While loop -> từ lần lặp thứ 2 mới kiểm tra điều kiện
+    Break & Continue in loop
 */
 
-var i = 0;
+// Break
+for (var i = 0; i < 10; i++) {
+    console.log(i); // 0 -> 5
 
-do {
-    i++;
-
-    console.log(i); // 1 -> 10
-
-} while (i < 10);
+    if (i >= 5) {
+        break;
+    }
+}
 
 
 
-var isSuccess = false;
-var a = 0;
+// Continue
+for (var i = 0; i < 10; i++) {
 
-do {
-    a++;
-    console.log('Nạp thẻ lần ' + a);
-
-    // Thành công
-    if (true) {
-        isSuccess = true;
+    if (i%2 !== 0) {
+        continue;
     }
 
-} while (!isSuccess && a < 3)
+    console.log(i); // 0 2 4 6 8
+}
