@@ -1,53 +1,31 @@
 /*
-    Array method:
-        reduce()
+    includes method:
 */
 
-Array.prototype.reduce2 = function (callback, result) {
-    let i = 0;
-    if (arguments.length < 2) {
-        i = 1;
-        result = this[0];
-    }
-    for (; i < this.length; i++) {
-        result = callback(result, this[i], i, this);
-    }
-    return result;
-};
+// String
+var title = 'Responsive web design';
 
-const numbers = [1, 2, 3, 4, 5];
-
-const result = numbers.reduce2((total, number, index, array) => {
-    console.log(total, number, index, array);
-    return total + number;
-}, 10);
-
-console.log(result);
+console.log(title.includes('dash')); // false
+console.log(title.includes('web design')); // true
+console.log(title.includes('Responsive', 0)); // true
+console.log(title.includes('Responsive', 2)); // false -> bắt đầu tìm kiếm từ vị trí số 2
 
 
-/*
-    Quan sát expected results và hoàn thành code còn thiếu
-*/
+// Array
+var courses = ['Javascript', 'PHP', 'C++'];
 
-// Expected results:
-var arr = [
-    ['name', 'Sơn Đặng'],
-    ['age', 18],
-]; 
+console.log(courses.includes('Javascript')); // true
+console.log(courses.includes('Java')); // false
+console.log(courses.includes('Javascript', 0)); // true
+console.log(courses.includes('Javascript', 1)); // false
 
-// Cách 1
-function arrToObj(arr) {
-    return arr.reduce(function(obj, current) {
-        obj[current[0]] = current[1]
-        return obj;
-    }, {});
+
+
+// Bài tập
+var cars = ['Rolls-Royce', 'Mercedes', 'Lexus', 'BMW', 'Audi'];
+
+function checkCar(cars) {
+   return cars.includes('Mercedes', 2);
 }
 
-// Cách 2
-function arrToObj(arr) {
-    return arr.reduce((result, item) => {
-        return Object.assign({[item[0]]: item[1]}, result);
-    } , {});
-}
-
-console.log(arrToObj(arr)); // { name: 'Sơn Đặng', age: 18 }
+console.log(checkCar(cars)); // Output: false
