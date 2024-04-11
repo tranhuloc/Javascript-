@@ -1,31 +1,52 @@
 /*
-    includes method:
+    Callback
+    Là hàm (function) được truyền qua đối số khi gọi hàm khác
 */
 
-// String
-var title = 'Responsive web design';
-
-console.log(title.includes('dash')); // false
-console.log(title.includes('web design')); // true
-console.log(title.includes('Responsive', 0)); // true
-console.log(title.includes('Responsive', 2)); // false -> bắt đầu tìm kiếm từ vị trí số 2
-
-
-// Array
-var courses = ['Javascript', 'PHP', 'C++'];
-
-console.log(courses.includes('Javascript')); // true
-console.log(courses.includes('Java')); // false
-console.log(courses.includes('Javascript', 0)); // true
-console.log(courses.includes('Javascript', 1)); // false
-
-
-
-// Bài tập
-var cars = ['Rolls-Royce', 'Mercedes', 'Lexus', 'BMW', 'Audi'];
-
-function checkCar(cars) {
-   return cars.includes('Mercedes', 2);
+function myFunction(param) {
+    if (typeof param === 'function') {
+        param('Hoc lap trinh');
+    }
 }
 
-console.log(checkCar(cars)); // Output: false
+function myCallback(value) {
+    console.log('Value: ', value);  // Value: Hoc lap trinh
+}
+
+myFunction(myCallback);
+
+
+
+/*
+    Hoàn thành function sumCb và tạo thêm các function 
+    subCb, multiCb và divCb.
+*/
+
+function sumCb(a, b) {
+    return a + b;
+}
+
+function subCb(a, b) {
+    return a - b;
+}
+
+function multiCb(a, b) {
+    return a * b;
+}
+
+function divCb(a, b) {
+    return a / b;
+}
+
+function caculate(a, b, cb) {
+    return cb(a, b);
+}
+
+// Expected results
+// caculate(1, 2, sumCb) // Output: 3
+// caculate(1, 2, subCb) // Output: -1
+// caculate(1, 2, multiCb) // Output: 2
+// caculate(3, 1, divCb) // Output: 3
+
+
+
