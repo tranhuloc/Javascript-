@@ -1,52 +1,72 @@
 /*
     Callback
-    Là hàm (function) được truyền qua đối số khi gọi hàm khác
-*/
+    1. Là hàm
+    2. Truyền qua đối số
+    3. Được gọi lại (trong hàm nhận đối số)
+    */
 
-function myFunction(param) {
-    if (typeof param === 'function') {
-        param('Hoc lap trinh');
+Array.prototype.map2 = function(callback) {
+    var output = [], arrayLength = this.length;
+
+    for (var i = 0; i < arrayLength; ++i) {
+        //callback(this[i], i);
+        
+        var result = callback(this[i], i);
+        output.push(result);
     }
+    return output;
 }
 
-function myCallback(value) {
-    console.log('Value: ', value);  // Value: Hoc lap trinh
-}
+var courses = [
+    'Javascript',
+    'PHP',
+    'Python'
+];
 
-myFunction(myCallback);
+courses.map2(function(course, index) {
+    console.log(index, course); // 0 'Javascript'; 1 'PHP'; 2 'Python'
+});
 
-
-
-/*
-    Hoàn thành function sumCb và tạo thêm các function 
-    subCb, multiCb và divCb.
-*/
-
-function sumCb(a, b) {
-    return a + b;
-}
-
-function subCb(a, b) {
-    return a - b;
-}
-
-function multiCb(a, b) {
-    return a * b;
-}
-
-function divCb(a, b) {
-    return a / b;
-}
-
-function caculate(a, b, cb) {
-    return cb(a, b);
-}
-
-// Expected results
-// caculate(1, 2, sumCb) // Output: 3
-// caculate(1, 2, subCb) // Output: -1
-// caculate(1, 2, multiCb) // Output: 2
-// caculate(3, 1, divCb) // Output: 3
+var htmls = courses.map2(function(course) {
+    return `<h2>${course}</h2>`;
+});
 
 
+// courses.map(function(course) {
+//     console.log(course); // Javascript PHP Python
+// });
 
+// var htmls = courses.map(function(course) {
+//     return `<h2>${course}</h2>`;
+// });
+
+ console.log(htmls.join('')); // <h2>Javascript</h2><h2>PHP</h2><h2>Python</h2>
+
+ /*
+    Hãy tạo ra phương thức myMap 
+    hoạt động tương tự phương thức map2 và map
+ */
+
+    Array.prototype.myMap = function(cb) {
+        var output = [], arrayLength = this.length;
+    
+        for (var i = 0; i < arrayLength; ++i) {
+            var result = cb(this[i], i);
+            output.push(result);
+        }
+        return output;
+    }
+    
+    // Expected results
+    // const numbers = [1, 2, 3];
+    
+    // console.log(numbers.myMap(function (number) {
+    //     return number * 2;
+    // })) // Output: [2, 4, 6]
+    
+    // console.log(numbers.myMap(function (number, index) {
+    //     return number * index;
+    // })) // Output: [0, 2, 6]
+    
+    
+    
